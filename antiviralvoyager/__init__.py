@@ -10,5 +10,10 @@ app.secret_key = os.urandom(32)
 def root():
     return render_template("base.html")
 
+@app.route("/home")
+def root():
+    return render_template("base.html")
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)
