@@ -4,7 +4,7 @@ import os, json
 
 app = Flask(__name__)
 DIR = os.path.dirname(__file__) or '.'
-app.secret_key = os.urandom()
+app.secret_key = os.urandom(32)
 
 @app.route("/")
 def root():
