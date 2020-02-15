@@ -14,6 +14,10 @@ def root():
 def home():
     return render_template("base.html")
 
+@app.route("/maptest")
+def maptest():
+    return render_template("map.html")
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)

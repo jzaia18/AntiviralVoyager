@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div id="map">
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0hA6im9a3Vj7CNB3YQRZOC_iD9EY2pxY&libraries=visualization">
+</script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/map.js' ) }}"></script>
+{% endblock %}
