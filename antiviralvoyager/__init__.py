@@ -57,7 +57,8 @@ def volcano_results():
         result = ibm_utils.query_VolcanicEarthquake(coords[0], coords[1], request.args['elevation'], request.args['type'],request.args['VEI'])['predictions'][0]['values'][0]
     else:
         result = ibm_utils.query_VolcanicTsunami(coords[0], coords[1], request.args['elevation'], request.args['type'],request.args['VEI'])['predictions'][0]['values'][0]
-    return render_template("calc_risk.html", result=result, resultType="volcanic")
+    certainty = "%.2f"%(result[1][result[0]]*100)
+    return render_template("calc_risk.html", result=result, resultType="volcanic", disaster=request.args['disaster'], certainty=certainty)
 
 
 if __name__ == '__main__':

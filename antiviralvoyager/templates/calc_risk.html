@@ -14,196 +14,209 @@ Calculate Risk
     <h2> Predict the Number of Infections in a U.S. State Following a Natural Disaster </h2>
 
     <form action="/infectionresults">
-      Year:
-      <select name="year">
-        <option value="1998">1998</option>
-        <option value="1999">1999</option>
-        <option value="2000">2000</option>
-        <option value="2001">2001</option>
-        <option value="2002">2002</option>
-        <option value="2003">2003</option>
-        <option value="2004">2004</option>
-        <option value="2005">2005</option>
-        <option value="2006">2006</option>
-        <option value="2007">2007</option>
-        <option value="2008">2008</option>
-        <option value="2009">2009</option>
-        <option value="2010">2010</option>
-        <option value="2011">2011</option>
-        <option value="2012">2012</option>
-        <option value="2013">2013</option>
-        <option value="2014">2014</option>
-        <option value="2015">2015</option>
-        <option value="2016">2016</option>
-        <option value="2017">2017</option>
-        <option value="2018">2018</option>
-        <option value="2019">2019</option>
-        <option value="2020">2020</option>
-      </select>
+      <div class="form-group">
+        <label for="us-year"> Year: </label>
+        <select class="custom-select" id="us-year" name="year">
+          <option value="1998">1998</option>
+          <option value="1999">1999</option>
+          <option value="2000">2000</option>
+          <option value="2001">2001</option>
+          <option value="2002">2002</option>
+          <option value="2003">2003</option>
+          <option value="2004">2004</option>
+          <option value="2005">2005</option>
+          <option value="2006">2006</option>
+          <option value="2007">2007</option>
+          <option value="2008">2008</option>
+          <option value="2009">2009</option>
+          <option value="2010">2010</option>
+          <option value="2011">2011</option>
+          <option value="2012">2012</option>
+          <option value="2013">2013</option>
+          <option value="2014">2014</option>
+          <option value="2015">2015</option>
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+        </select>
+      </div>
 
-      <br />
+      <div class="form-group">
+        <label for="us-month"> Month: </label>
+        <select class="custom-select" id="us-month" name="month">
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+      </div>
 
-      Month:
-      <select name="month">
-        <option value="1">January</option>
-        <option value="2">February</option>
-        <option value="3">March</option>
-        <option value="4">April</option>
-        <option value="5">May</option>
-        <option value="6">June</option>
-        <option value="7">July</option>
-        <option value="8">August</option>
-        <option value="9">September</option>
-        <option value="10">October</option>
-        <option value="11">November</option>
-        <option value="12">December</option>
-      </select>
+      <div class="form-group">
+        <label for="us-setting"> Setting: </label>
+        <select id="us-setting" class="custom-select" name="setting">
+          <option value="Restaurant">Restaurant</option>
+          <option value="Nursing Home">Nursing Home</option>
+          <option value="House">House</option>
+          <option value="Hospital">Hospital</option>
+          <option value="Camp">Camp</option>
+          <option value="School">School</option>
+          <option value="Day Care">Day Care</option>
+          <option value="Office">Office</option>
+          <option value="Prison">Prison</option>
+          <option value="Festival">Festival</option>
+          <option value="Event Space">Event Space</option>
+          <option value="Public Space">Public Park/Space</option>
+          <option value="Grocery Store">Grocery Store</option>
+          <option value="Boat">Boat</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
 
-      <br />
+      <div class="form-group">
+        <label for="us-state"> State: </label>
+        <select id="us-state" class="custom-select" name="state">
+          <option>Alabama</option>
+          <option>Alaska</option>
+          <option>Arizona</option>
+          <option>Arkansas</option>
+          <option>California</option>
+          <option>Colorado</option>
+          <option>Connecticut</option>
+          <option>Delaware</option>
+          <option>Florida</option>
+          <option>Georgia</option>
+          <option>Guam</option>
+          <option>Hawaii</option>
+          <option>Idaho</option>
+          <option>Illinois</option>
+          <option>Indiana</option>
+          <option>Iowa</option>
+          <option>Kansas</option>
+          <option>Kentucky</option>
+          <option>Louisiana</option>
+          <option>Maine</option>
+          <option>Maryland</option>
+          <option>Massachusetts</option>
+          <option>Michigan</option>
+          <option>Micronesia</option>
+          <option>Minnesota</option>
+          <option>Mississippi</option>
+          <option>Missouri</option>
+          <option>Montana</option>
+          <option>Nebraska</option>
+          <option>Nevada</option>
+          <option>New Hampshire</option>
+          <option>New Jersey</option>
+          <option>New Mexico</option>
+          <option>New York</option>
+          <option>North Carolina</option>
+          <option>North Dakota</option>
+          <option>Ohio</option>
+          <option>Oklahoma</option>
+          <option>Oregon</option>
+          <option>Pennsylvania</option>
+          <option>Puerto Rico</option>
+          <option>Rhode Island</option>
+          <option>South Carolina</option>
+          <option>South Dakota</option>
+          <option>Tennessee</option>
+          <option>Texas</option>
+          <option>Utah</option>
+          <option>Vermont</option>
+          <option>Virginia</option>
+          <option>Washington</option>
+          <option>West Virginia</option>
+          <option>Wisconsin</option>
+          <option>Wyoming</option>
+        </select>
+      </div>
 
-      Setting:
-      <select name="setting">
-        <option value="Restaurant">Restaurant</option>
-        <option value="Nursing Home">Nursing Home</option>
-        <option value="House">House</option>
-        <option value="Hospital">Hospital</option>
-        <option value="Camp">Camp</option>
-        <option value="School">School</option>
-        <option value="Day Care">Day Care</option>
-        <option value="Office">Office</option>
-        <option value="Prison">Prison</option>
-        <option value="Festival">Festival</option>
-        <option value="Event Space">Event Space</option>
-        <option value="Public Space">Public Park/Space</option>
-        <option value="Grocery Store">Grocery Store</option>
-        <option value="Boat">Boat</option>
-        <option value="Other">Other</option>
-      </select>
+      <div class="form-group">
+        <label for="us-disaster">Disaster Type:</label>
+        <select id="us-disaster" class="custom-select" name="disaster">
+          <option>Severe Storm</option>
+          <option>Tornado</option>
+          <option>Hurricane</option>
+          <option>Flood</option>
+          <option>Fire</option>
+          <option>Landslide</option>
+          <option>Earthquake</option>
+          <option>Volcano</option>
+          <option>Tsunami</option>
+          <option>Other</option>
+        </select>
+      </div>
 
-      <br />
-
-      State:
-      <select name="state">
-        <option>Alabama</option>
-        <option>Alaska</option>
-        <option>Arizona</option>
-        <option>Arkansas</option>
-        <option>California</option>
-        <option>Colorado</option>
-        <option>Connecticut</option>
-        <option>Delaware</option>
-        <option>Florida</option>
-        <option>Georgia</option>
-        <option>Guam</option>
-        <option>Hawaii</option>
-        <option>Idaho</option>
-        <option>Illinois</option>
-        <option>Indiana</option>
-        <option>Iowa</option>
-        <option>Kansas</option>
-        <option>Kentucky</option>
-        <option>Louisiana</option>
-        <option>Maine</option>
-        <option>Maryland</option>
-        <option>Massachusetts</option>
-        <option>Michigan</option>
-        <option>Micronesia</option>
-        <option>Minnesota</option>
-        <option>Mississippi</option>
-        <option>Missouri</option>
-        <option>Montana</option>
-        <option>Nebraska</option>
-        <option>Nevada</option>
-        <option>New Hampshire</option>
-        <option>New Jersey</option>
-        <option>New Mexico</option>
-        <option>New York</option>
-        <option>North Carolina</option>
-        <option>North Dakota</option>
-        <option>Ohio</option>
-        <option>Oklahoma</option>
-        <option>Oregon</option>
-        <option>Pennsylvania</option>
-        <option>Puerto Rico</option>
-        <option>Rhode Island</option>
-        <option>South Carolina</option>
-        <option>South Dakota</option>
-        <option>Tennessee</option>
-        <option>Texas</option>
-        <option>Utah</option>
-        <option>Vermont</option>
-        <option>Virginia</option>
-        <option>Washington</option>
-        <option>West Virginia</option>
-        <option>Wisconsin</option>
-        <option>Wyoming</option>
-      </select>
-
-      <br />
-
-      Disaster Type:
-      <select name="disaster">
-        <option>Severe Storm</option>
-        <option>Tornado</option>
-        <option>Hurricane</option>
-        <option>Flood</option>
-        <option>Fire</option>
-        <option>Landslide</option>
-        <option>Earthquake</option>
-        <option>Volcano</option>
-        <option>Tsunami</option>
-        <option>Other</option>
-      </select>
-      <br />
-
-      <input type="submit" />
+      <div class="form-group">
+        <input class="btn btn-primary" type="submit" />
+      </div>
     </form>
   </div>
 
   <div class="col">
-    <h2> Predict the Likelihood of Seismo-Tidal Events as a Result of Volcanic Activity </h2>
+    <h2> Predict the Likelihood of Seismic & Tidal Events as a Result of Volcanic Activity </h2>
 
     <form action="/volcanoresults">
-      Location:
-      <label for="location"></label>
-      <input type="text" id="location" name="location" required>
-      <br />
 
-      Elevation:
-      <label for="elevation"></label>
-      <input type="number" id="elevation" name="elevation" value="0" />
-      <br />
+      <div class="form-group">
+        <label for="volcano-location">Location:</label>
+        <input class="form-control" type="text" id="volcano-location" name="location" required>
+      </div>
 
-      Volcano Type:
-      <select name="type">
-        <option value="Caldera">Caldera</option>
-        <option value="Stratovolcano">Stratovolcano</option>
-        <option value="Shield Volcano">Shield Volcano</option>
-      </select>
+      <div class="form-group">
+        <label for="volcano-elevation">Elevation:</label>
+        <input class="form-control" type="number" id="volcano-elevation" name="elevation" value="0" />
+      </div>
 
-      <br />
 
-      Volcanic Power:
-      <select name="VEI">
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8 (supervolcano)</option>
-      </select>
+      <div class="form-group">
+        <label for="volcano-type">Volcano Type:</label>
+        <select id="volcano-type" class="custom-select" name="type">
+          <option value="Caldera">Caldera</option>
+          <option value="Stratovolcano">Stratovolcano</option>
+          <option value="Shield Volcano">Shield Volcano</option>
+        </select>
+      </div>
 
-      <br />
+      <div class="form-group">
+        <label for="volcano-vei">Volcanic Power:</label>
+        <select id="volcano-vei" class="custom-select" name="VEI">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8 (supervolcano)</option>
+        </select>
+      </div>
 
-      Tsunami <input type="radio" name="disaster" value="tsunami" checked>
-      Earthquake <input type="radio" name="disaster" value="earthquake">
+      <div class="form-group">
+        <div class="custom-control custom-radio custom-control-inline">
+          <input class="custom-control-input" id="volcano-disaster-tsunami" type="radio" name="disaster" value="tsunami" checked>
+          <label class="custom-control-label" for="volcano-disaster-tsunami">Tsunami</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input class="custom-control-input" id="volcano-disaster-earthquake" type="radio" name="disaster" value="earthquake">
+          <label class="custom-control-label" for="volcano-disaster-earthquake">Earthquake</label>
+        </div>
+      </div>
 
-      <br />
-
-      <input type="submit" />
+      <div class="form-group">
+        <input class="btn btn-primary" type="submit" />
+      </div>
     </form>
   </div>
 </div>
@@ -214,7 +227,7 @@ Calculate Risk
   <h3>The number of people likely to contract a disease as a result of this disaster: {{result}}</h3>
   {% elif resultType == "volcanic" %}
   <br />
-  <h3>It is {% if result[0] == 0 %}un{% endif %}likely that there will be a tsunami due to this eruption, certainty: {{result[1][result[0]]*100}}%</h3>
+  <h3>It is {% if result[0] == 0 %}un{% endif %}likely that there will be a {{disaster}} due to this eruption, certainty: <span id="certainty">{{certainty}}%</span></h3>
   {% endif %}
 </div>
 {% endblock %}
