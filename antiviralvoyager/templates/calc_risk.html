@@ -161,12 +161,12 @@ Calculate Risk
   </div>
 
   <div class="col">
-    <h2> Predict the Likelihood of a Tsunami as a Result of Volcanic Activity </h2>
+    <h2> Predict the Likelihood of Seismo-Tidal Events as a Result of Volcanic Activity </h2>
 
     <form action="/volcanoresults">
       Location:
       <label for="location"></label>
-      <input type="text" id="location" name="location">
+      <input type="text" id="location" name="location" required>
       <br />
 
       Elevation:
@@ -195,6 +195,11 @@ Calculate Risk
         <option value="7">7</option>
         <option value="8">8 (supervolcano)</option>
       </select>
+
+      <br />
+
+      Tsunami <input type="radio" name="disaster" value="tsunami" checked>
+      Earthquake <input type="radio" name="disaster" value="earthquake">
 
       <br />
 
