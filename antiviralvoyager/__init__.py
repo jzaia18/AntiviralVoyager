@@ -12,11 +12,16 @@ def root():
 
 @app.route("/home")
 def home():
-    return render_template("base.html")
+    return render_template("home.html")
 
 @app.route("/maptest")
 def maptest():
     return render_template("map.html")
+
+@app.route("/sources")
+def sources():
+    return render_template("sources.html")
+
 
 
 if __name__ == '__main__':
