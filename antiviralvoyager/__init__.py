@@ -26,6 +26,9 @@ def sources():
 def calc_risk():
     return render_template("calc_risk.html")
 
+@app.route("/facts")
+def facts():
+    return render_template("facts.html")
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)
