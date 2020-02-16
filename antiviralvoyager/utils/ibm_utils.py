@@ -25,8 +25,8 @@ def query_China(year, week, flood_count):
 
     return score_prediction('https://us-south.ml.cloud.ibm.com/v4/deployments/aa9d40e6-9fb8-4139-94fc-c23da0a5bf33/predictions', payload_scoring)
 
-def query_VolcanicTsunami(Latitude, Longitude, Elevation, VEI):
-    vals = [1, Latitude, Longitude, Elevation, "Caldera", VEI]
+def query_VolcanicTsunami(Latitude, Longitude, Elevation, VolType, VEI):
+    vals = [1, Latitude, Longitude, Elevation, VolType, VEI]
 
     payload_scoring = {"input_data": [
         {"fields": ["Earthquake", "Latitude", "Longitude", "Elevation", "Type", "Volcano Explosivity Index (VEI)"],
