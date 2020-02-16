@@ -53,8 +53,10 @@ def volcano_results():
     # print(request.args)
     coords = geocoder.get_coords(request.args['location'])
     # print(coords)
-    result = ibm_utils.query_VolcanicTsunami(coords[0], coords[1], request.args['elevation'], request.args['type'],
-                                             request.args['VEI'])['predictions'][0]['values'][0]
+    if (request.args['disaster'] == 'earthquake'):
+        result = ibm_utils.query_VolcanicEarthquake(coords[0], coords[1], request.args['elevation'], request.args['type'],request.args['VEI'])['predictions'][0]['values'][0]
+    else:
+        result = ibm_utils.query_VolcanicTsunami(coords[0], coords[1], request.args['elevation'], request.args['type'],request.args['VEI'])['predictions'][0]['values'][0]
     return render_template("calc_risk.html", result=result, resultType="volcanic")
 
 

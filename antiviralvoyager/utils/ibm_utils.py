@@ -19,11 +19,23 @@ def query_US(illness_year, illness_month, illness_state, illness_setting, disast
     return score_prediction('https://us-south.ml.cloud.ibm.com/v4/deployments/be2dd1a1-cdff-4db8-8f79-90fe9c390927/predictions', payload_scoring)
 
 
-def query_China(year, week, flood_count):
-    vals = [year, week, flood_count]
-    payload_scoring = {"input_data": [{"fields": ["year", " week", " flood count"], "values": [vals]}]}
+# def query_China(year, week, flood_count):
+#     vals = [year, week, flood_count]
+#     payload_scoring = {"input_data": [{"fields": ["year", " week", " flood count"], "values": [vals]}]}
 
-    return score_prediction('https://us-south.ml.cloud.ibm.com/v4/deployments/aa9d40e6-9fb8-4139-94fc-c23da0a5bf33/predictions', payload_scoring)
+#     return score_prediction('https://us-south.ml.cloud.ibm.com/v4/deployments/aa9d40e6-9fb8-4139-94fc-c23da0a5bf33/predictions', payload_scoring)
+
+def query_VolcanicEarthquake(Latitude, Longitude, Elevation, VolType, VEI):
+    vals = [float(Latitude), float(Longitude), float(Elevation), VolType, int(VEI)]
+
+    payload_scoring = {"input_data": [
+        {"fields": ["Latitude", "Longitude", "Elevation", "Type", "Volcano Explosivity Index (VEI)"],
+         "values": [vals]}]}
+
+    #return score_prediction("https://us-south.ml.cloud.ibm.com/v4/deployments/6651a51d-eb29-4d34-93b5-db50756fd24a/predictions", payload_scoring)
+    response_scoring = requests.post("https://us-south.ml.cloud.ibm.com/v4/deployments/1d169fa3-2512-4586-92e2-a5cbbe7e0115/predictions", json=payload_scoring, headers=header)
+    return json.loads(response_scoring.text)
+
 
 def query_VolcanicTsunami(Latitude, Longitude, Elevation, VolType, VEI):
     vals = [1, float(Latitude), float(Longitude), float(Elevation), VolType, int(VEI)]
