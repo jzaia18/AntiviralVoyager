@@ -1,5 +1,5 @@
 import urllib3, requests, json, os
-import keyfinder
+from utils import keyfinder
 
 DIR = os.path.dirname(__file__) or '.'
 f = open(DIR + "/../secrets.json")
@@ -13,10 +13,10 @@ header = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + iam_t
 
 
 def query_US(illness_year, illness_month, illness_state, illness_setting, disaster_state, disaster_year, disaster_type):
-    vals = [illness_year, illness_month, illness_state, illness_setting, disaster_state, disaster_year, disaster_type.upper()]
+    vals = [int(illness_year), int(illness_month), illness_state.upper(), illness_setting.upper(), disaster_state.upper(), int(disaster_year), disaster_type.upper()]
     payload_scoring = {"input_data": [{"fields": ["Illness_ Year", "Illness_Month", "Illness_State", "Illness_Setting", "Disaster_state", "Disaster_Year", "Disaster"], "values": [vals]}]}
 
-    return score_prediction('https://us-south.ml.cloud.ibm.com/v4/deployments/ab69f45e-1ba7-43b8-907c-ed969c5eaaf5/predictions', payload_scoring)
+    return score_prediction('https://us-south.ml.cloud.ibm.com/v4/deployments/be2dd1a1-cdff-4db8-8f79-90fe9c390927/predictions', payload_scoring)
 
 
 def query_China(year, week, flood_count):
@@ -26,13 +26,15 @@ def query_China(year, week, flood_count):
     return score_prediction('https://us-south.ml.cloud.ibm.com/v4/deployments/aa9d40e6-9fb8-4139-94fc-c23da0a5bf33/predictions', payload_scoring)
 
 def query_VolcanicTsunami(Latitude, Longitude, Elevation, VolType, VEI):
-    vals = [1, Latitude, Longitude, Elevation, VolType, VEI]
+    vals = [1, float(Latitude), float(Longitude), float(Elevation), VolType, int(VEI)]
 
     payload_scoring = {"input_data": [
         {"fields": ["Earthquake", "Latitude", "Longitude", "Elevation", "Type", "Volcano Explosivity Index (VEI)"],
          "values": [vals]}]}
 
-    return score_prediction("https://us-south.ml.cloud.ibm.com/v4/deployments/6651a51d-eb29-4d34-93b5-db50756fd24a/predictions", payload_scoring)
+    #return score_prediction("https://us-south.ml.cloud.ibm.com/v4/deployments/6651a51d-eb29-4d34-93b5-db50756fd24a/predictions", payload_scoring)
+    response_scoring = requests.post("https://us-south.ml.cloud.ibm.com/v4/deployments/6651a51d-eb29-4d34-93b5-db50756fd24a/predictions", json=payload_scoring, headers=header)
+    return json.loads(response_scoring.text)
 
 
 def score_prediction(url, payload_scoring):
