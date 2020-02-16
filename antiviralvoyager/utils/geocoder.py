@@ -12,7 +12,7 @@ headers = {
 
 def get_coords(place_name):
     data = {
-        **headers,
+        "key": KEY,
         "address": place_name
     }
 

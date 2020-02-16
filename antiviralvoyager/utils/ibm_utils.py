@@ -1,4 +1,4 @@
-import urllib3, requests, json, os
+import requests, json, os
 from utils import keyfinder
 
 DIR = os.path.dirname(__file__) or '.'
