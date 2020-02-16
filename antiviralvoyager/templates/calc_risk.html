@@ -10,7 +10,19 @@ Calculate Risk
 
 {% block body %}
 <div class="row">
-  <div class="col">
+  <div class="col-3">
+    <h2>Risk Calculator</h2>
+    <br />
+    <p class="info">This risk calculator allows for the calculation of the possible number of infected after any given disaster.
+    Allowing emergency personnel to make informed decisions about further treatment of rescued peoples and monitoring
+    of health conditions in affected areas. It also allows for the prediction of other seismic events like tsunamis
+    and tidal waves after a large volcanic eruption which also have high rates of disease associated with their effects.
+    When used in tandem, these two results can be used to predict the impact disease might have on a community after a
+    large volcanic event, and provide useful information on the places to set up rescue zones where communicable
+    disease won’t spread as quickly.</p>
+  </div>
+  <div class="col-1"></div>
+  <div class="col-4">
     <h2> Predict the Number of Infections in a U.S. State Following a Natural Disaster </h2>
 
     <form action="/infectionresults">
@@ -163,7 +175,7 @@ Calculate Risk
     </form>
   </div>
 
-  <div class="col">
+  <div class="col-4">
     <h2> Predict the Likelihood of Seismic & Tidal Events as a Result of Volcanic Activity </h2>
 
     <form action="/volcanoresults">
