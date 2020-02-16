@@ -9,6 +9,11 @@
     border-bottom: 1px solid rgb(20,20,20);
 }
 
+.info {
+    font-size: large;
+}
+
+
 #nav-title-text {
     /* width: 8rem; */
     /* overflow-wrap: break-word; */
