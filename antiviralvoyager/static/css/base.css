@@ -5,6 +5,9 @@
 #nav-logo {
     max-height: 32px;
 }
+.navbar {
+    border-bottom: 1px solid rgb(20,20,20);
+}
 
 #nav-title-text {
     /* width: 8rem; */
@@ -18,9 +21,13 @@ body {
 }
 
 #body-container {
-    padding: 1vw;
-    margin: 1vw;
-    border: 1px solid black;
+    padding: 1.5vw;
+    margin: 1.5vw;
+    border: 1px solid rgba(0,0,0,.125);
     border-radius: 5px;
-    background-color: rgba(200, 255, 255, .3);
+    background-color: rgba(132, 219, 255, .2);
+}
+
+.shadow {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
 }

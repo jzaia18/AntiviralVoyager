@@ -1,5 +1,6 @@
 #map {
-    width: 80vw;
-    min-height: 50vw;
+    width: 85vw;
+    height: 50vw;
+    max-height: 80vh;
     margin: auto;
 }
