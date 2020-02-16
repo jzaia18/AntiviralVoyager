@@ -25,6 +25,15 @@ def query_China(year, week, flood_count):
 
     return score_prediction('https://us-south.ml.cloud.ibm.com/v4/deployments/aa9d40e6-9fb8-4139-94fc-c23da0a5bf33/predictions', payload_scoring)
 
+def query_VolcanicTsunami(Latitude, Longitude, Elevation, VEI):
+    vals = [1, Latitude, Longitude, Elevation, "Caldera", VEI]
+
+    payload_scoring = {"input_data": [
+        {"fields": ["Earthquake", "Latitude", "Longitude", "Elevation", "Type", "Volcano Explosivity Index (VEI)"],
+         "values": [vals]}]}
+
+    return score_prediction("https://us-south.ml.cloud.ibm.com/v4/deployments/6651a51d-eb29-4d34-93b5-db50756fd24a/predictions", payload_scoring)
+
 
 def score_prediction(url, payload_scoring):
     response_scoring = requests.post(url, json=payload_scoring, headers=header)
