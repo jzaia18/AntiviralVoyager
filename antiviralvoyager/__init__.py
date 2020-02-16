@@ -22,6 +22,9 @@ def maptest():
 def sources():
     return render_template("sources.html")
 
+@app.route("/calcrisk")
+def calc_risk():
+    return render_template("calc_risk.html")
 
 
 if __name__ == '__main__':
