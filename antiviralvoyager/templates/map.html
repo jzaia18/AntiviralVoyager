@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
 
-{% block body %}
-<div id="map">
-</div>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/map.css') }}">
+        <title>Disease Map</title>
+    </head>
 
-{% endblock %}
+    {% block body %}
+        <div id="map" class ="map">
+        </div>
 
-{% block js %}
-<script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0hA6im9a3Vj7CNB3YQRZOC_iD9EY2pxY&libraries=visualization">
-</script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/map.js' ) }}"></script>
-{% endblock %}
+    {% endblock %}
+
+    {% block js %}
+        <script type="text/javascript"
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0hA6im9a3Vj7CNB3YQRZOC_iD9EY2pxY&libraries=visualization">
+        </script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/map.js' ) }}"></script>
+    {% endblock %}
