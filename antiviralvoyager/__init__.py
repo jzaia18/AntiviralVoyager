@@ -8,11 +8,11 @@ app.secret_key = os.urandom(32)
 
 @app.route("/")
 def root():
-    return render_template("base.html")
+    return render_template("home.html")
 
 @app.route("/home")
 def home():
-    return render_template("home.html")
+    return redirect(url_for("root"))
 
 @app.route("/maptest")
 def maptest():
