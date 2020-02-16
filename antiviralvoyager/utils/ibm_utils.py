@@ -13,7 +13,7 @@ header = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + iam_t
 
 
 def query_US(illness_year, illness_month, illness_state, illness_setting, disaster_state, disaster_year, disaster_type):
-    vals = [illness_year, illness_month, illness_state, illness_setting, disaster_state, disaster_year, disaster_type]
+    vals = [illness_year, illness_month, illness_state, illness_setting, disaster_state, disaster_year, disaster_type.upper()]
     payload_scoring = {"input_data": [{"fields": ["Illness_ Year", "Illness_Month", "Illness_State", "Illness_Setting", "Disaster_state", "Disaster_Year", "Disaster"], "values": [vals]}]}
 
     return score_prediction('https://us-south.ml.cloud.ibm.com/v4/deployments/ab69f45e-1ba7-43b8-907c-ed969c5eaaf5/predictions', payload_scoring)
@@ -40,7 +40,22 @@ def score_prediction(url, payload_scoring):
     return json.loads(response_scoring.text)['predictions'][0]['values'][0][0]
 
 if __name__ == '__main__':
-    print(query_US(1989, 8, "Nebraska", "Hotel", "Nebraska", 1989, "Tornado"))
-    for i in range(2010, 2030, 1):
-        print(i, ": ", query_China(i, 3, 0))
+    print(query_US(1998, 8, "Nebraska", "City", "Nebraska", 1998, "Tornado"))
+    print(query_US(1998, 8, "Nebraska", "City", "Nebraska", 1998, "Earthquake"))
+    print(query_US(1998, 8, "Nebraska", "City", "Nebraska", 1998, "Hurricane"))
+    print(query_US(1998, 8, "Nebraska", "City", "Nebraska", 1998, "Hurricane Sandy"))
+    print(query_US(1998, 8, "Nebraska", "City", "Nebraska", 1998, "Hurricane Katrina"))
+
+    print('========================================')
+
+    print(query_US(2012, 8, "Nebraska", "City", "Nebraska", 2012, "Tornado"))
+    print(query_US(2012, 8, "Nebraska", "City", "Nebraska", 2012, "Volcano"))
+    print(query_US(2012, 8, "Nebraska", "City", "Nebraska", 2012, "Potato"))
+    print(query_US(2012, 8, "Nebraska", "City", "Nebraska", 2012, "T"))
+    print(query_US(2012, 8, "Nebraska", "City", "Nebraska", 2012, "Hurricane"))
+    print(query_US(2012, 8, "Nebraska", "City", "Nebraska", 2012, "Hurricane Sandy"))
+    print(query_US(2012, 8, "Nebraska", "City", "Nebraska", 2012, "Hurricane Katrina"))
+
+    # for i in range(2010, 2030, 1):
+    #     print(i, ": ", query_China(i, 3, 0))
     #print(query_China(2025, 3, 999999999))
