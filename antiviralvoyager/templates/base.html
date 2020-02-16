@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css' ) }}">
     <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js' ) }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js' ) }}"></script>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='img/icons/logo.png' ) }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/icons/icon_large.png' ) }}">
     {% block css %} {% endblock %}
     <title>
       {% block title %} {% endblock %}
@@ -19,44 +19,40 @@
   </head>
 
   <body>
-    {% block body %}
-         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-              <a class="navbar-brand d-flex align-items-center" href="/home"> Antiviral </a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown-3" aria-controls="navbarNavDropdown-3"
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/home"> <img id="nav-logo" src="{{ url_for('static', filename='img/icons/icon_large.png' ) }}" /> <span id="nav-title-text"> Antiviral Voyager </span> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown-3" aria-controls="navbarNavDropdown-3"
                 aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div class="collapse navbar-collapse mr-auto text-center" id="navbarNavDropdown-3">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link nav-style" href="/maptest">Map</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-style" href="/sources">Sources</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-style" href="https://github.com/jzaia18/AntiviralVoyager">
+                <i class="fab fa-github"></i> Github
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-               <a href="/maptest"> <button type="button" class="btn btn-dark btn-pill">Map</button> </a>
-              <div class="collapse navbar-collapse mr-auto text-center" id="navbarNavDropdown-3">
-                <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-twitter"></i> Twitter
-                    </a>
-                  </li>
+    <div id="body-container">
+      {% block body %}
 
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-facebook-f"></i> Facebook
-                    </a>
-                  </li>
+      {% endblock %}
+    </div>
 
-                  <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/jzaia18/AntiviralVoyager">
-                      <i class="fab fa-github"></i> Github
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-    {% endblock %}
     {% block js %}
-    <!--   lazy javascript -->
-      <script src="{{url_for('static', filename='js/lazy.js' )}}"></script>
+    <script src="{{url_for('static', filename='js/lazy.js' )}}"></script>
     {% endblock %}
   </body>
 </html>

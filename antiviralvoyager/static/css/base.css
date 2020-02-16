@@ -1,0 +1,26 @@
+.navbar-nav .nav-item .nav-style {
+    color: white;
+}
+
+#nav-logo {
+    max-height: 32px;
+}
+
+#nav-title-text {
+    /* width: 8rem; */
+    /* overflow-wrap: break-word; */
+    /* white-space: normal; */
+    margin-left: 1rem;
+}
+
+body {
+    background-image: url("/static/img/background.jpeg");
+}
+
+#body-container {
+    padding: 1vw;
+    margin: 1vw;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgba(200, 255, 255, .3);
+}
