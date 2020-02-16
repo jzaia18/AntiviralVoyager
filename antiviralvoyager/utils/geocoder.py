@@ -2,8 +2,11 @@ import requests,json
 
 url = "https://maps.googleapis.com/maps/api/geocode/json"
 
+DIR = os.path.dirname(__file__) or '.'
+KEY = json.loads(open(DIR + "/../secrets.json").read())['google']
+
 headers = {
-   "key": "AIzaSyB0hA6im9a3Vj7CNB3YQRZOC_iD9EY2pxY"
+   "key": KEY
 }
 
 def get_coords(place_name):
@@ -21,4 +24,5 @@ def get_coords(place_name):
 
 
 if __name__ == '__main__':
-    print(get_coords("canada"))
+    place = input("Please enter a location: ")
+    print(get_coords(place))
