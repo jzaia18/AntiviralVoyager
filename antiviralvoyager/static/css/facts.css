@@ -1,0 +1,23 @@
+.volcano-table {
+    border: 1px black solid;
+    background-color: rgba(255, 255, 255, .6);
+    margin: auto;
+    text-align: left;
+}
+
+.volcano-table td, .volcano-table th {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.volcano-table tr:nth-child(odd){
+    background-color: rgba(220, 220, 220, .4);
+}
+
+.volcano-table-container {
+    text-align: center;
+}
+
+.vei-tooltip {
+
+}
